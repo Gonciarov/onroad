@@ -1,0 +1,52 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+</head>
+
+<body>
+    <a href="/logout">Logout</a>
+    <h1>Hello
+        <%= name %>
+    </h1>
+
+    <a href="/index">Web development</a>
+    <br/>
+    <a href="/index">Networking</a>
+    <br/>
+    <a href="/index">Construction</a>
+    <br/>
+    <a href="/index">Catering</a>
+    <br/>
+    <a href="/index">Artistic</a>
+    <br/>
+    <a href="/index">Civil service</a>
+    <br/>
+    <a href="/index">Real estate</a>
+
+    <form action="/jobs-found" method="POST">
+        <p>What you are looking for?</p>
+        <input type="text" name="industry" placeholder="developers jobs" required>
+        <input type="text" name="location" placeholder="London" required>
+        <input type="submit" value="Submit">
+    </form>
+
+    <p>User <%= email %> requested these keywords:</p>
+    <ul>
+        <% for (keyword in keywords) { %>
+            <li>
+                <p><b><%= keyword %>:</b> <%= keywords[keyword] %> time(s)</p>
+               
+            </li>
+        <% } %>
+    </ul>
+    
+</body>
+
+</html>
